@@ -56,19 +56,26 @@ module TestBench;
 		#100; //Establece el tiempo de ejecucion en 100 unidades de tiempo
 		
       for (addrRa = 0; addrRa < 8; addrRa = addrRa + 1) begin
+      
       //Se crea la condicion de que para addrRa igual a cero y para todo numero menor que 8 se actualice el valor de addrRa sumandole una unidad
 			
 			#5 addrRb=addrRa+8;
-// Luego cada 5 unidades de tiempo se actualiza el valor de addrRb tomando el valor de addrRb mas 8 unidades			
+// Luego cada 5 unidades de tiempo se actualiza el valor de addrRb tomando el valor de addrRb mas 8 unidades	
+
 			 $display("el valor de registro %d =  %d y %d = %d", addrRa,datOutRa,addrRb,datOutRb) ;
 			 
 			 //imprime los valores de addrRa,datOutRa,addrRb y datOutRb
+			 
     end
+    
 	 // termina la instruccion inicial
+	 
 			
 	end
        // cierra el test uut
+       
 endmodule
+
  // cierra el modulo 
  
  

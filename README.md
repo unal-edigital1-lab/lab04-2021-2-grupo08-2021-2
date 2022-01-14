@@ -57,7 +57,8 @@ module TestBench;
 		
       for (addrRa = 0; addrRa < 8; addrRa = addrRa + 1) begin
       
-      //Se crea la condicion de que para addrRa igual a cero y para todo numero menor que 8 se actualice el valor de addrRa sumandole una unidad
+      //Se crea la condicion de que para addrRa igual a cero
+      //y para todo numero menor que 8 se actualice el valor de addrRa sumandole una unidad
 			
 			#5 addrRb=addrRa+8;
 // Luego cada 5 unidades de tiempo se actualiza el valor de addrRb tomando el valor de addrRb mas 8 unidades	

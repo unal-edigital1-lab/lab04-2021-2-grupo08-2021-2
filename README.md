@@ -24,10 +24,12 @@ module TestBench;
 
 	// Outputs
 	wire [3:0] datOutRa; // Conexion iterna del modulo llamada datOutRa de 4 bits
+	
 	wire [3:0] datOutRb; // Conexion iterna del modulo llamada datOutRb de 4 bits
 
 	// Instancia la unidad bajo el test UTT (UUT)
 	// A partir de este punto se asocia cada una de las variables del modulo a la variable de conexion o llamada; a ambas se les asigno el mismo nombre para evitar confusiones, esto hasta usar el comando initial
+	
 	BancoRegistro uut (
 		.addrRa(addrRa), 
 		.addrRb(addrRb), 
@@ -52,16 +54,18 @@ module TestBench;
 
 		// Wait 100 ns for global reset to finish
 		#100; //Establece el tiempo de ejecucion en 100 unidades de tiempo
+		
       for (addrRa = 0; addrRa < 8; addrRa = addrRa + 1) begin
       //Se crea la condicion de que para addrRa igual a cero y para todo numero menor que 8 se actualice el valor de addrRa sumandole una unidad
+			
 			#5 addrRb=addrRa+8;
 // Luego cada 5 unidades de tiempo se actualiza el valor de addrRb tomando el valor de addrRb mas 8 unidades			
 			 $display("el valor de registro %d =  %d y %d = %d", addrRa,datOutRa,addrRb,datOutRb) ;
+			 
 			 //imprime los valores de addrRa,datOutRa,addrRb y datOutRb
     end
 	 // termina la instruccion inicial
-		
-		
+			
 	end
        // cierra el test uut
 endmodule

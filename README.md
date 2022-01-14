@@ -9,11 +9,17 @@ module TestBench;
 // Declaracion del modulo testbench
 	// Inputs
 	reg [3:0] addrRa; //registro llamado addRa de 4 bits donde el bit menos significativo esta a la derecha
+	
 	reg [3:0] addrRb; //registro llamado addRb de 4 bits donde el bit menos significativo esta a la derecha
+	
 	reg [4:0] addrW; //registro llamado addrW de 5 bits donde el bit menos significativo esta a la derecha
+	
 	reg [3:0] datW; //registro llamado datW de 4 bits donde el bit menos significativo esta a la derecha
+	
 	reg RegWrite; // Registro llamado RegWrite de un bit 
-	reg clk; // Registro llamado clk de un bit "reloj"	
+	
+	reg clk; // Registro llamado clk de un bit "reloj"
+	
 	reg rst; // Registro llamado rst de un bit "reset"
 
 	// Outputs

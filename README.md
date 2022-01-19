@@ -79,6 +79,16 @@ endmodule
 
  // cierra el modulo 
  
- 
+# Implementación
+
 La implementación y las pruebas respectivas, se muestran en los siguientes videos.
-https://drive.google.com/file/d/1sOjM-xqo28zlmlhm-oP_42981Mqc-fPA/view?usp=sharing
+
+https://drive.google.com/file/d/1sOjM-xqo28zlmlhm-oP_42981Mqc-fPA/view?usp=sharing   (1)
+
+En este primer video se da una descripción de la asignación de pines, y como es el funcionamiento basico del banco de registro.
+
+https://drive.google.com/file/d/1TsB6QcMRGDh7u73eJ1sAs0rPK9wrmT2K/view?usp=sharing   (2)
+
+https://drive.google.com/file/d/1tFrW3EHlkdMxXK3g7F2WuDTA-faA6v09/view?usp=sharing   (3)
+
+En los videos (2) y (3), se realizan pruebas de escritura y lectura en diferentes direcciones, comprobando asi que el codigo funciona como se espera. 

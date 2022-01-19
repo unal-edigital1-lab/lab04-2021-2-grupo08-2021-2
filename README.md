@@ -1,5 +1,5 @@
 # lab04 Diseño de banco de Registro
-
+A continuación se realizara la descripción del codigo del banco de registro:
 ```//Testbench banco de registro
 
 timescale 1ns / 1ps
@@ -77,7 +77,7 @@ module TestBench;
        
 endmodule
 
- // cierra el modulo ```
+ // cierra el modulo 
 
 # Codigo Top HDL de la solución.
 

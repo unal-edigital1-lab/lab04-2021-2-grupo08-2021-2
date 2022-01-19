@@ -106,7 +106,7 @@ display dp(.num(datA), .clk(clk), .rst(rst), .sseg(SSeg), .an(An));
 
 endmodule
 ```
- 
+El único inconveniente de este codigo, es que hay que agregar un segundo `num` en la instancia de display para tener funcional la lectura de `datB`, pero para esto hay que modificar también el codigo de la clase instanciada `display`.
 # Implementación
 
 La implementación y las pruebas respectivas, se muestran en los siguientes videos.

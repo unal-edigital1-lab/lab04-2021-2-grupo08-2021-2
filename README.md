@@ -1,6 +1,6 @@
 # lab04 Diseño de banco de Registro
 
-//Testbench banco de registro
+```//Testbench banco de registro
 
 timescale 1ns / 1ps
 // escala de tiempo unidad/precision
@@ -77,7 +77,35 @@ module TestBench;
        
 endmodule
 
- // cierra el modulo 
+ // cierra el modulo ```
+
+# Codigo Top HDL de la solución.
+
+El codigo que se mostrará acontinuación (Lab_04_g8), fue escrito como top para instanciar los bloques de banco de registro y display (y display a su vez instancia BCDtoSSeg) para el funcionamiento correcto del programa.
+```
+module Lab_04_g8 (addrA, addrB, addrw, datw, Regwrite, clk, rst, SSeg, An);
+
+input [3:0] addrA;
+input [3:0] addrB;
+input [3:0] addrw;
+input [3:0] datw;
+input Regwrite;
+input clk;
+input rst;
+output [0:6] SSeg;
+output [3:0] An;
+
+wire [3:0] datA;
+wire [3:0] datB;
+
+BancoRegistro #(3,4) 
+registro (.addrRa(addrA), .addrRb(addrB), .addrW(addrw), .datW(datw), .RegWrite(Regwrite),
+.clk(clk), .rst(rst), .datOutRa(datA), .datOutRb(datB));
+	
+display dp(.num(datA), .clk(clk), .rst(rst), .sseg(SSeg), .an(An));
+
+endmodule
+```
  
 # Implementación
 

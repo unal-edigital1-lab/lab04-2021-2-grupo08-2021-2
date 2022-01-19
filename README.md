@@ -1,4 +1,6 @@
 # lab04 Diseño de banco de Registro
+* Juan David Barrera Salamanca
+* Jefferson Ivan Delgado Bernal
 A continuación se realizara la descripción del codigo del banco de registro:
 ```
 //Testbench banco de registro

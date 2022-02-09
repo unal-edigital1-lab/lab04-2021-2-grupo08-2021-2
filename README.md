@@ -187,8 +187,9 @@ endmodule
 ```
 Y los resultados fueron los siguientes:
 ![Image of sim1](https://github.com/unal-edigital1-lab/lab04-2021-2-grupo08-2021-2/blob/master/banco_de_registro_sim1.PNG)
-En esta imagen se observa como 
+En esta imagen se observa como hace la lectura el display del valor que se le fija a la dirección 0000 que en este caso es 1, no cambia por que a pesar de cambiar las direcciones de escritura, está en modo lectura
 ![Image of sim2](https://github.com/unal-edigital1-lab/lab04-2021-2-grupo08-2021-2/blob/master/banco_de_registro_sim2.PNG)
+Para la segunda imagen se prueba el funcionamiento de el botón `rst` donde despues de un tiempo de ser presionado vuelve a cero el display
 # Implementación
 
 La implementación y las pruebas respectivas, se muestran en los siguientes videos.

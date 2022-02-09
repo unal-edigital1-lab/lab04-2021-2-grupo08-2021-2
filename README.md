@@ -1,6 +1,7 @@
 # lab04 Diseño de banco de Registro
 * Juan David Barrera Salamanca
 * Jefferson Ivan Delgado Bernal 
+* Roberto Sanchez Figueroa
 # Documentación 
 A continuación se realizara la descripción del codigo del banco de registro:
 ```
@@ -110,6 +111,84 @@ display dp(.num(datA), .clk(clk), .rst(rst), .sseg(SSeg), .an(An));
 endmodule
 ```
 El único inconveniente de este codigo, es que hay que agregar un segundo `num` en la instancia de display para tener funcional la lectura de `datB`, pero para esto hay que modificar también el codigo de la clase instanciada `display`.
+# Archivo TestBench y simulación.
+Para esta parte se creó el archivo TestBench `Lab_04_g8_TB` mostrado a continuación.
+```
+`timescale 10ns / 1ns
+module Lab_04_g8_TB;
+
+	reg [3:0] addrRa;
+	reg [3:0] addrRb;
+	reg [3:0] addrW;
+	reg [3:0] datW;
+	reg RegWrite;
+	reg clk;
+	reg rst;
+
+
+	wire [0:6] sseg;
+	wire [3:0] an;
+	integer i;
+
+	wire [3:0] datOutRa;
+	wire [3:0] datOutRb;
+
+
+	Lab_04_g8 uut (
+		.addrRa(addrRa),
+		.addrRb(addrRb),
+		.addrW(addrW),
+		.datW(datW),
+		.RegWrite(RegWrite),
+		.clk(clk),
+		.rst(rst),
+		.sseg(sseg),
+		.an(an)
+	);
+	initial begin
+		addrRa = 1;
+		addrRb = 2;
+		addrW = 0;
+		datW = 1;
+		RegWrite = 0;
+		clk = 0;
+		rst = 0;
+
+
+		#100;
+
+    		for (addrRa = 0; addrRa < 4; addrRa = addrRa + 1) begin
+		//Lectura registros
+			#5000 addrRb=addrRa+4;
+		end
+
+
+		#5000  // Despues 5000ns inicia escritura
+
+		RegWrite=1;
+		addrW=0;
+		for(i=0; i<9;i=i+1) begin
+		  #5000 datW=i;
+		end
+
+	 	// Pruebas boton del reset
+		#10000
+		rst=1;
+      #12000
+		rst=0;
+		#12000
+		RegWrite=0;
+
+	 end
+
+	 always #1 clk = ~clk;
+
+endmodule
+```
+Y los resultados fueron los siguientes:
+![Image of sim1](https://github.com/unal-edigital1-lab/lab04-2021-2-grupo08-2021-2/blob/master/banco_de_registro_sim1.PNG)
+En esta imagen se observa como 
+![Image of sim2](https://github.com/unal-edigital1-lab/lab04-2021-2-grupo08-2021-2/blob/master/banco_de_registro_sim2.PNG)
 # Implementación
 
 La implementación y las pruebas respectivas, se muestran en los siguientes videos.
